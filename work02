@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>work01</title>
+		<style type="text/css">
+			*{margin: 5px;}
+			legend{color: red;}
+			span{color: red;}
+			fieldset{margin-bottom: 20px;width: 500px;}
+			#com option{display: none;}
+			datalist{display: none;}
+		</style>
+	</head>
+	<body>
+		<h1>请填写个人信息</h1>
+		<form>
+		    <fieldset>
+			    <legend>基本信息</legend>
+			        姓名<input type="text" name="name1" required="required" placeholder="请输入姓名" /><span>*</span><br/>
+			        年龄<input type="text" />
+	 	    </fieldset>
+			<fieldset>
+			    <legend>你想在哪里收到邮件？</legend>
+			        邮箱<input type="text" required="required" placeholder="请输入邮箱" list="com" onclick="none()" onkeydown="show()"autocomplete="on"/><span>*</span>
+			    <datalist id="com">
+				    <option value="@qq.com" class="subNone"></option>
+				    <option value="@163.com" class="subNone"></option>
+				    <option value="@gmail.com" class="subNone"></option>
+				    <option value="@yahho.com" class="subNone"></option>
+			    	<option value="@126.com" class="subNone"></option>
+			    </datalist>
+			    
+		    </fieldset>
+		    <fieldset>
+			    <legend>收入情况</legend>
+			        月收入<input type="number" name="num1" min="0" /><br />
+			        银行卡<input type="text"  />
+			        有效期<input type="date" name="data1"/>
+	    	</fieldset>
+	    	<fieldset>
+	    		<legend>选择提交文件</legend>
+		                文件<input type="file" name="file" multiple="multiple"/>
+		    </fieldset>
+		    <input type="submit" value="提交" />
+		</form>
+	</body>
+	<script type="text/javascript">
+        
+        function none(){
+        	var datanone = document.getElementById("com");
+        	datanone.style.display= "none";
+        }
+        var reg = /^[a-zA-Z0-9_-]/;
+        funtion show(){
+        	var datashow = document.getElementById("com");
+        	datashow.style.display="block";
+        }
+        
+        
+	</script>
+</html>
